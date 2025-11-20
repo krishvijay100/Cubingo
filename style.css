@@ -1,0 +1,25 @@
+/* use . to reference to a class (timerButton class)*/
+.timerButton{
+    width: 80px;
+    height: 30px;
+    border: 3px solid;
+    border-radius: 12px;
+    border-color: #000000;
+    color: #666699;
+    cursor: pointer;
+}
+
+/* use # to reference to an ID (timeDisplay ID)*/
+#timeDisplay{
+    font-size: 75px;
+    font-family: monospace;
+    color: #000000;
+}
+
+#timer{
+    text-align: center;
+    border: 3px solid;
+    border-radius: 20px;
+    background-color: #800000;
+
+}

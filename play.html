@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>
-            Play
-        </title>
+        <title>Play</title>
+        <link rel="stylesheet" href="style.css">
     </head>    
     <body>
-       <a href = "homescreen.html">Home</a>
-       <a href = "play.html">Play</a>
-       <a href = "ollalgs.html">OLL Algorithms</a>
-       <a href = "pllalgs.html">PLL Algorithms</a> 
+       <a href="homescreen.html">Home</a>
+       <a href="play.html">Play</a>
+       <a href="ollalgs.html">OLL Algorithms</a>
+       <a href="pllalgs.html">PLL Algorithms</a> 
         <h1>
         Play
         </h1>
+        <div id = "timer">
+            <div id = "timeDisplay"> 00:00:00 </div>
+            <div id = "controls">
+                <button id = "startButton" class="timerButton"> Start </button>
+                <button id = "stopButton" class="timerButton"> Stop </button>    
+            </div>
+        </div>
+        <script src = "timer.js"></script>
     </body>
 </html>
