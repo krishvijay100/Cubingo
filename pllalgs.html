@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <script id="pllalgs" src="algorithms.js"></script>
     <head>
         <title>PLL Algorithms</title>
     </head>
@@ -7,93 +8,32 @@
         <a href = "homescreen.html">Home</a>
         <a href = "play.html">Play</a>
         <a href = "ollalgs.html">OLL Algorithms</a>
-        <a href = "pllalgs.html">PLL Algorithms</a>  
-
+        <a href = "pllalgs.html">PLL Algorithms</a> 
         <h1>PLL Algorithms</h1>
-        
-        <h2>Ub Perm</h2>
-        <p>R2 U (R U R' U') R' U' (R' U R')</p>
-        <p>YouTube Link: </p>
-        
-        <h2>Ua Perm</h2>
-        <p>(R U' R U) R U (R U' R' U') R2</p>
-        <p>YouTube Link: </p>
-        
-        <h2>Z Perm</h2>
-        <p>(M2' U M2' U) (M' U2) (M2' U2 M')</p>
-        <p>YouTube Link: </p>
-        
-        <h2>H Perm</h2>
-        <p>(M2' U M2') U2 (M2' U M2')</p>
-        <p>YouTube Link: </p>
-        
-        <h2>Aa Perm</h2>
-        <p>x (R' U R') D2 (R U' R') D2 R2 x'</p>
-        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ibDaGbBp1wY?si=9jFc0x0O422ZvPPV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        
-        <h2>Ab Perm</h2>
-        <p>x R2' D2 (R U R') D2 (R U' R) x'</p>
-        <p>YouTube Link: </p>
-        
-        <h2>E Perm</h2>
-        <p>x' (R U' R' D) (R U R' D') (R U R' D) (R U' R' D') x</p>
-        <p>YouTube Link: </p>
-        
-        <h2>Ga Perm</h2>
-        <p>R2 U (R' U R' U') (R U' R2) D U' (R' U R D')</p>
-        <p>YouTube Link: </p>
-        
-        <h2>Gb Perm</h2>
-        <p>(F' U' F) (R2 u R' U) (R U' R u') R2'</p>
-        <p>YouTube Link: </p>
-        
-        <h2>Gc Perm</h2>
-        <p>R2 U' (R U' R U) (R' U R2 D') (U R U' R') D</p>
-        <p>YouTube Link: </p>
-        
-        <h2>Gd Perm</h2>
-        <p>D' (R U R' U') D (R2 U' R U') (R' U R' U) R2</p>
-        <p>YouTube Link: </p>
-        
-        <h2>Ra Perm</h2>
-        <p>(R U' R' U') (R U R D) (R' U' R D') (R' U2 R')</p>
-        <p>YouTube Link: </p>
-        
-        <h2>Rb Perm</h2>
-        <p>(R' U2 R U2') R' F (R U R' U') R' F' R2</p>
-        <p>YouTube Link: </p>
-        
-        <h2>Ja Perm</h2>
-        <p>(R' U L' U2) (R U' R' U2 R) L</p>
-        <p>YouTube Link: </p>
-        
-        <h2>Jb Perm</h2>
-        <p>(R U R' F') (R U R' U') R' F R2 U' R'</p>
-        <p>YouTube Link: </p>
-        
-        <h2>T Perm</h2>
-        <p>(R U R' U') (R' F R2 U') R' U' (R U R' F')</p>
-        <p>YouTube Link: </p>
-        
-        <h2>F Perm</h2>
-        <p>(R' U' F')(R U R' U')(R' F R2 U')(R' U' R U)(R' U R)</p>
-        <p>YouTube Link: </p>
-        
-        <h2>V Perm</h2>
-        <p>(R' U R' U') y (R' F' R2 U') (R' U R' F) R F</p>
-        <p>YouTube Link: </p>
-        
-        <h2>Y Perm</h2>
-        <p>F (R U' R' U') (R U R' F') (R U R' U') (R' F R F')</p>
-        <p>YouTube Link: </p>
-        
-        <h2>Na Perm</h2>
-        <p>(RUR'U)(RUR'F')(RUR'U')(R'FR2U') R' U2 (RU'R')</p>
-        <p>YouTube Link: </p>
-        
-        <h2>Nb Perm</h2>
-        <p>(R' U R U') (R' F' U' F) (R U R' F) R' F' (R U' R)</p>
-        <p>YouTube Link: </p>
-        
+        <div id="algorithms-container"></div>
+        <script src="algorithms.js"></script>
+        <script>
+            const container = document.getElementById('algorithms-container');
+            pllAlgorithms.forEach(alg => {
+                const heading = document.createElement('h2');
+                heading.textContent = alg.name;
+                const notation = document.createElement('p');
+                notation.textContent = alg.notation;
+            
+                const iframe = document.createElement('iframe');
+                iframe.width = "560";
+                iframe.height = "315";
+                iframe.src = "https://www.youtube-nocookie.com/embed/" + alg.youtubeId;
+                iframe.frameBorder = "0";
+                iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+                iframe.referrerPolicy = "strict-origin-when-cross-origin";
+                iframe.allowFullscreen = true;
+            
+                // Add them to the page
+                container.appendChild(heading);
+                container.appendChild(notation);
+                container.appendChild(iframe);
+            })
+        </script>
     </body>
 </html>
