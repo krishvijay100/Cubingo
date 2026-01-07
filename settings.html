@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cubingo | Settings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top-nav">
+  <div class="brand">Cubingo</div>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="learn.html">Learn</a>
+    <a href="train.html">Train</a>
+    <a href="stats.html">Stats</a>
+    <a href="settings.html" class="active">Settings</a>
+  </nav>
+</header>
+<main>
+  <section>
+    <p class="eyebrow">Settings</p>
+    <h1>Export, import, and reset</h1>
+    <p class="section-sub">Back up your progress, move to another device, or start fresh.</p>
+  </section>
+
+  <section class="split">
+    <div class="card">
+      <h2 class="section-title">Export</h2>
+      <textarea id="export-box" readonly></textarea>
+      <div class="hero-actions">
+        <button class="btn" id="export-generate">Generate JSON</button>
+        <button class="btn" id="export-copy">Copy</button>
+        <button class="btn" id="export-download">Download</button>
+      </div>
+    </div>
+    <div class="card">
+      <h2 class="section-title">Import</h2>
+      <textarea id="import-box" placeholder="Paste your JSON here..."></textarea>
+      <div class="hero-actions">
+        <button class="btn primary" id="import-apply">Import (overwrite)</button>
+      </div>
+      <p class="section-sub" id="import-status"></p>
+    </div>
+  </section>
+
+  <section class="split">
+    <div class="card">
+      <h2 class="section-title">Training</h2>
+      <label class="toggle">
+        <input type="checkbox" id="toggle-notation">
+        Show algorithm notation during training
+      </label>
+    </div>
+    <div class="card">
+      <h2 class="section-title">Reset</h2>
+      <div class="hero-actions">
+        <button class="btn" id="reset-stats">Reset all stats</button>
+        <button class="btn ghost" id="reset-all">Reset everything</button>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="algs.js" defer></script>
+<script src="storage.js" defer></script>
+<script src="stats.js" defer></script>
+<script src="app.js" defer></script>
+<script src="settings.js" defer></script>
+</body>
+</html>

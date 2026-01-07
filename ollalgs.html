@@ -1,39 +1,11 @@
 <!DOCTYPE html>
-<html>
-    <script id="ollalgs" src="algorithms.js"></script>
-    <head>
-        <title>OLL Algorithms</title>
-    </head>
-    <body>
-        <a href = "homescreen.html">Home</a>
-        <a href = "play.html">Play</a>
-        <a href = "ollalgs.html">OLL Algorithms</a>
-        <a href = "pllalgs.html">PLL Algorithms</a> 
-        <h1>OLL Algorithms</h1>
-        <div id="algorithms-container"></div>
-        <script src="algorithms.js"></script>
-        <script>
-            const container = document.getElementById('algorithms-container');
-            ollAlgorithms.forEach(alg => {
-                const heading = document.createElement('h2');
-                heading.textContent = alg.name;
-                const notation = document.createElement('p');
-                notation.textContent = alg.notation;
-            
-                const iframe = document.createElement('iframe');
-                iframe.width = "560";
-                iframe.height = "315";
-                iframe.src = "https://www.youtube-nocookie.com/embed/" + alg.youtubeId;
-                iframe.frameBorder = "0";
-                iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-                iframe.referrerPolicy = "strict-origin-when-cross-origin";
-                iframe.allowFullscreen = true;
-            
-                // Add them to the page
-                container.appendChild(heading);
-                container.appendChild(notation);
-                container.appendChild(iframe);
-            })
-        </script>
-    </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="0; url=learn.html#oll">
+  <title>Redirecting...</title>
+</head>
+<body>
+  <p>Moved to <a href="learn.html#oll">learn.html</a>.</p>
+</body>
 </html>

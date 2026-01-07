@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cubingo | Daily Practice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top-nav">
+  <div class="brand">Cubingo</div>
+  <nav class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="learn.html">Learn</a>
+    <a href="train.html">Train</a>
+    <a href="stats.html">Stats</a>
+    <a href="settings.html">Settings</a>
+  </nav>
+</header>
+<main>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Daily practice</p>
+      <h1>Build a daily streak for OLL and PLL</h1>
+      <p>Study a case, drill the timer, and watch your stats grow. Designed for beginners and built for consistency.</p>
+      <div class="hero-actions">
+        <a class="btn primary" id="recommended-link" href="train.html?mode=recommend&group=both">Recommended practice</a>
+        <a class="btn ghost" href="learn.html">Browse algorithms</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="metric">
+        <span class="label">Current streak</span>
+        <span class="value" id="streak-current">0</span>
+        <span class="sub">Best streak: <span id="streak-best">0</span></span>
+      </div>
+      <div class="metric">
+        <span class="label">Level</span>
+        <span class="value" id="level-value">1</span>
+        <div class="progress">
+          <div class="progress-bar" id="xp-bar"></div>
+        </div>
+        <span class="sub"><span id="xp-value">0</span> XP</span>
+      </div>
+    </div>
+  </section>
+  <section class="summary-grid">
+    <div class="card tight">
+      <p class="eyebrow">Today</p>
+      <h2 id="today-solves">0 solves</h2>
+      <p class="section-sub">Solve once to keep your streak alive.</p>
+    </div>
+    <div class="card tight">
+      <p class="eyebrow">Total</p>
+      <h2 id="total-solves">0 solves</h2>
+      <p class="section-sub">Includes DNFs for honest stats.</p>
+    </div>
+    <div class="card tight">
+      <p class="eyebrow">Weakest focus</p>
+      <h2 id="weakest-name">--</h2>
+      <p class="section-sub" id="weakest-type">No data yet.</p>
+    </div>
+    <div class="card tight">
+      <p class="eyebrow">DNF rate</p>
+      <h2 id="dnf-rate">0%</h2>
+      <p class="section-sub"><span id="total-dnfs">0</span> DNFs logged.</p>
+    </div>
+  </section>
+</main>
+<script src="algs.js" defer></script>
+<script src="storage.js" defer></script>
+<script src="stats.js" defer></script>
+<script src="app.js" defer></script>
+<script src="home.js" defer></script>
+</body>
+</html>
