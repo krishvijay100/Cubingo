@@ -11,17 +11,6 @@
     corners: [1, 0, 1, 0, 1, 0, 1, 0, 1]
   };
 
-  const OLL_PATTERN_POOL = [
-    PATTERNS.dot,
-    PATTERNS.line,
-    PATTERNS.cross,
-    PATTERNS.l,
-    PATTERNS.t,
-    PATTERNS.s,
-    PATTERNS.diag,
-    PATTERNS.corners
-  ];
-
   const OLL_BASE = [
     { id: "OLL_01", type: "OLL", name: "OLL 1", alg: "R U2' R2 F R F' U2' (R' F R F')", youtubeUrl: "https://www.youtube-nocookie.com/embed/Krt5t5X9gTo", setupMoves: "" },
     { id: "OLL_02", type: "OLL", name: "OLL 2", alg: "F (R U R' U') F' f (R U R' U') f'", youtubeUrl: "https://www.youtube-nocookie.com/embed/EyCwdkn03sM", setupMoves: "" },
@@ -82,6 +71,66 @@
     { id: "OLL_57", type: "OLL", name: "OLL 57", alg: "(R U R' U') M' U R U' r'", youtubeUrl: "https://www.youtube-nocookie.com/embed/qHvJd0pk41Q", setupMoves: "" }
   ];
 
+  const OLL_PATTERNS = {
+    OLL_01: [0, 0, 0, 0, 1, 0, 0, 0, 0],
+    OLL_02: [0, 0, 0, 0, 1, 0, 0, 0, 0],
+    OLL_03: [0, 0, 0, 0, 1, 0, 0, 0, 1],
+    OLL_04: [0, 0, 1, 0, 1, 0, 0, 0, 0],
+    OLL_05: [0, 0, 0, 0, 1, 1, 0, 1, 1],
+    OLL_06: [0, 1, 1, 0, 1, 1, 0, 0, 0],
+    OLL_07: [0, 1, 0, 1, 1, 0, 1, 0, 0],
+    OLL_08: [1, 0, 0, 1, 1, 0, 0, 1, 0],
+    OLL_09: [0, 1, 0, 1, 1, 0, 0, 0, 1],
+    OLL_10: [0, 0, 1, 1, 1, 0, 0, 1, 0],
+    OLL_11: [0, 0, 0, 0, 1, 1, 1, 1, 0],
+    OLL_12: [1, 1, 0, 0, 1, 1, 0, 0, 0],
+    OLL_13: [0, 0, 0, 1, 1, 1, 1, 0, 0],
+    OLL_14: [0, 0, 0, 1, 1, 1, 0, 0, 1],
+    OLL_15: [0, 0, 0, 1, 1, 1, 0, 0, 1],
+    OLL_16: [0, 0, 1, 1, 1, 1, 0, 0, 0],
+    OLL_17: [1, 0, 0, 0, 1, 0, 0, 0, 1],
+    OLL_18: [1, 0, 1, 0, 1, 0, 0, 0, 0],
+    OLL_19: [1, 0, 1, 0, 1, 0, 0, 0, 0],
+    OLL_20: [1, 0, 1, 0, 1, 0, 1, 0, 1],
+    OLL_21: [0, 1, 0, 1, 1, 1, 0, 1, 0],
+    OLL_22: [0, 1, 0, 1, 1, 1, 0, 1, 0],
+    OLL_23: [1, 1, 1, 1, 1, 1, 0, 1, 0],
+    OLL_24: [0, 1, 1, 1, 1, 1, 0, 1, 1],
+    OLL_25: [1, 1, 0, 1, 1, 1, 0, 1, 1],
+    OLL_26: [0, 1, 1, 1, 1, 1, 0, 1, 0],
+    OLL_27: [0, 1, 0, 1, 1, 1, 1, 1, 0],
+    OLL_28: [1, 1, 1, 1, 1, 0, 1, 0, 1],
+    OLL_29: [1, 0, 1, 1, 1, 0, 0, 1, 0],
+    OLL_30: [1, 1, 0, 0, 1, 1, 1, 0, 0],
+    OLL_31: [0, 1, 1, 0, 1, 1, 0, 0, 1],
+    OLL_32: [0, 0, 1, 0, 1, 1, 0, 1, 1],
+    OLL_33: [0, 0, 1, 1, 1, 1, 0, 0, 1],
+    OLL_34: [0, 0, 0, 1, 1, 1, 1, 0, 1],
+    OLL_35: [1, 0, 0, 0, 1, 1, 0, 1, 1],
+    OLL_36: [1, 0, 0, 1, 1, 0, 0, 1, 1],
+    OLL_37: [1, 1, 0, 1, 1, 0, 0, 0, 1],
+    OLL_38: [0, 1, 1, 1, 1, 0, 1, 0, 0],
+    OLL_39: [0, 0, 1, 1, 1, 1, 1, 0, 0],
+    OLL_40: [1, 0, 0, 1, 1, 1, 0, 0, 1],
+    OLL_41: [0, 1, 0, 1, 1, 0, 1, 0, 1],
+    OLL_42: [1, 0, 1, 1, 1, 0, 0, 1, 0],
+    OLL_43: [1, 0, 0, 1, 1, 0, 1, 1, 0],
+    OLL_44: [0, 0, 1, 0, 1, 1, 0, 1, 1],
+    OLL_45: [0, 0, 1, 1, 1, 1, 0, 0, 1],
+    OLL_46: [1, 1, 0, 0, 1, 0, 1, 1, 0],
+    OLL_47: [0, 1, 0, 0, 1, 1, 0, 0, 0],
+    OLL_48: [0, 1, 0, 1, 1, 0, 0, 0, 0],
+    OLL_49: [0, 1, 0, 0, 1, 1, 0, 0, 0],
+    OLL_50: [0, 0, 0, 0, 1, 1, 0, 1, 0],
+    OLL_51: [0, 0, 0, 1, 1, 1, 0, 0, 0],
+    OLL_52: [0, 1, 0, 0, 1, 0, 0, 1, 0],
+    OLL_53: [0, 0, 0, 0, 1, 1, 0, 1, 0],
+    OLL_54: [0, 1, 0, 0, 1, 1, 0, 0, 0],
+    OLL_55: [0, 1, 0, 0, 1, 0, 0, 1, 0],
+    OLL_56: [0, 0, 0, 1, 1, 1, 0, 0, 0],
+    OLL_57: [1, 0, 1, 1, 1, 1, 1, 0, 1]
+  };
+
   const PLL_BASE = [
     { id: "PLL_Ub", type: "PLL", name: "Ub Perm", alg: "R' U R' U' R3 U' R' U R U R2", youtubeUrl: "https://www.youtube-nocookie.com/embed/mssHbM4JYOc", setupMoves: "" },
     { id: "PLL_Ua", type: "PLL", name: "Ua Perm", alg: "R U R' U R' U' R2 U' R' U R' U R", youtubeUrl: "https://www.youtube-nocookie.com/embed/WNkmbgnvQPU", setupMoves: "" },
@@ -106,10 +155,10 @@
     { id: "PLL_Nb", type: "PLL", name: "Nb Perm", alg: "r' D' F (r U' r)' F' D r2 U r' U' (r' F r F')", youtubeUrl: "https://www.youtube-nocookie.com/embed/P5yMlQQ3nsM", setupMoves: "" }
   ];
 
-  const OLL_ALGS = OLL_BASE.map((alg, index) => {
-    const pattern = OLL_PATTERN_POOL[index % OLL_PATTERN_POOL.length];
-    return { ...alg, pattern };
-  });
+  const OLL_ALGS = OLL_BASE.map((alg) => ({
+    ...alg,
+    pattern: OLL_PATTERNS[alg.id] || PATTERNS.dot
+  }));
 
   const PLL_ALGS = PLL_BASE.map((alg) => ({
     ...alg,
