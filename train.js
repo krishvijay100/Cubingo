@@ -57,6 +57,17 @@
     });
     modeSelect.classList.toggle("is-hidden", mode !== "select");
     modeRecommend.classList.toggle("is-hidden", mode !== "recommend");
+    if (mode === "select") {
+      const alg = getCurrentAlg();
+      if (alg) {
+        if (selectType.value !== alg.type) {
+          selectType.value = alg.type;
+          populateSelectList(alg.type);
+          currentAlgId = alg.id;
+        }
+        selectAlg.value = alg.id;
+      }
+    }
   }
 
   function populateSelectList(type) {
@@ -76,6 +87,20 @@
 
   function getCurrentAlg() {
     return currentAlgId ? getAlgById(currentAlgId) : null;
+  }
+
+  function syncSelectDropdownsToCurrent() {
+    const alg = getCurrentAlg();
+    if (!alg) {
+      return;
+    }
+    if (selectType.value !== alg.type) {
+      selectType.value = alg.type;
+      populateSelectList(alg.type);
+    }
+    currentAlgId = alg.id;
+    selectAlg.value = alg.id;
+    renderCurrentAlg();
   }
 
   function updateNotation(textElement, alg) {
@@ -316,4 +341,5 @@
 
   populateSelectList(selectType.value);
   pickNextRecommendation();
+  syncSelectDropdownsToCurrent();
 })();
