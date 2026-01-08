@@ -21,6 +21,7 @@
   const selectSetup = document.getElementById("select-setup");
   const selectNotation = document.getElementById("select-notation");
   const selectLearned = document.getElementById("select-learned");
+  const selectName = document.getElementById("select-name");
 
   const recommendGroup = document.getElementById("recommend-group");
   const recommendNext = document.getElementById("recommend-next");
@@ -28,6 +29,7 @@
   const recommendSetup = document.getElementById("recommend-setup");
   const recommendNotation = document.getElementById("recommend-notation");
   const recommendLearned = document.getElementById("recommend-learned");
+  const recommendName = document.getElementById("recommend-name");
 
   const timerStatus = document.getElementById("timer-status");
   const timerDisplay = document.getElementById("timer-display");
@@ -95,11 +97,13 @@
       selectSetup.textContent = alg.setupMoves || "None listed";
       updateNotation(selectNotation, alg);
       selectLearned.checked = Boolean(state.learned[alg.id]);
+      selectName.textContent = alg.name;
     } else {
       renderPattern(recommendDiagram, alg.pattern, "lg");
       recommendSetup.textContent = alg.setupMoves || "None listed";
       updateNotation(recommendNotation, alg);
       recommendLearned.checked = Boolean(state.learned[alg.id]);
+      recommendName.textContent = alg.name;
     }
 
     updateLiveStats();
