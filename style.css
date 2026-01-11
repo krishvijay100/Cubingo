@@ -147,6 +147,15 @@ main {
   gap: 16px;
 }
 
+.oll-category {
+  margin-bottom: 24px;
+}
+
+.oll-category-title {
+  font-size: 18px;
+  margin: 18px 0 12px;
+}
+
 .metric {
   display: flex;
   flex-direction: column;
@@ -232,6 +241,22 @@ main {
 .section-sub {
   color: var(--muted);
   margin-bottom: 16px;
+}
+
+#oll {
+  margin-top: 38px;
+}
+
+.learn-split {
+  gap: 40px;
+}
+
+.learn-split > div {
+  transform: translateX(-35px);
+}
+
+.learn-split .detail-panel {
+  transform: translateX(-12px);
 }
 
 .face-grid {

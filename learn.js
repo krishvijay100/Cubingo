@@ -88,6 +88,49 @@
     });
   });
 
-  getAlgsByType("OLL").forEach((alg) => createCard(alg, ollList));
+  const ollAlgs = getAlgsByType("OLL");
+  const ollById = new Map(ollAlgs.map((alg) => [alg.id, alg]));
+  const ollCategories = [
+    { title: "Cross", ids: [21, 22, 23, 24, 25, 26, 27] },
+    { title: "T-Shapes", ids: [33, 45] },
+    { title: "Squares", ids: [5, 6] },
+    { title: "C-Shapes", ids: [34, 46] },
+    { title: "W-Shapes", ids: [36, 38] },
+    { title: "Corners Correct, Edges Flipped", ids: [28, 57] },
+    { title: "P-Shapes", ids: [31, 32, 43, 44] },
+    { title: "I-Shapes", ids: [51, 52, 55, 56] },
+    { title: "Fish Shapes", ids: [9, 10, 35, 37] },
+    { title: "Knight Shapes", ids: [13, 14, 15, 16] },
+    { title: "Awkward Shapes", ids: [29, 30, 41, 42] },
+    { title: "L-Shapes", ids: [47, 48, 49, 50, 53, 54] },
+    { title: "Lightning Bolts", ids: [7, 8, 11, 12, 39, 40] },
+    { title: "Dot", ids: [1, 2, 3, 4, 17, 18, 19, 20] }
+  ];
+
+  function createCategory({ title, ids }) {
+    const wrapper = document.createElement("div");
+    wrapper.className = "oll-category";
+
+    const heading = document.createElement("h3");
+    heading.className = "oll-category-title";
+    heading.textContent = title;
+
+    const grid = document.createElement("div");
+    grid.className = "card-grid";
+
+    ids.forEach((num) => {
+      const id = `OLL_${String(num).padStart(2, "0")}`;
+      const alg = ollById.get(id);
+      if (alg) {
+        createCard(alg, grid);
+      }
+    });
+
+    wrapper.appendChild(heading);
+    wrapper.appendChild(grid);
+    ollList.appendChild(wrapper);
+  }
+
+  ollCategories.forEach((category) => createCategory(category));
   getAlgsByType("PLL").forEach((alg) => createCard(alg, pllList));
 })();
