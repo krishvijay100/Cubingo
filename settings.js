@@ -32,9 +32,11 @@
     importStatus.textContent = "";
     try {
       const parsed = JSON.parse(importBox.value || "{}");
-      overwriteState(parsed);
-      importStatus.textContent = "Import complete.";
-      refreshExport();
+      if (confirm("Import JSON and overwrite current data? NOTE: Importing an empty JSON will reset all data")) {
+        overwriteState(parsed);
+        importStatus.textContent = "Import complete.";
+        refreshExport();
+      }
     } catch (error) {
       importStatus.textContent = "Invalid JSON.";
     }
