@@ -9,10 +9,10 @@
 
 <!-- PROJECT LOGO -->
 <br />
-<div align="center">
-  <h3 align="center">Cubingo</h3>
+<div>
+  <h3>Cubingo</h3>
 
-  <p align="center">
+  <p>
     Cubingo turns learning 3x3 last layer algorithms into a daily practice game with streaks, levels, and smart recommendations.
     <br />
     <a href="https://github.com/krishvijay100/Cubingo"><strong>Explore the docs</strong></a>
@@ -44,8 +44,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
@@ -53,7 +51,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://cubingo.vercel.app)
+[![Cubingo homepage demo][product-screenshot]](https://cubingo.vercel.app)
 
 There are 78 last layer algorithms (57 OLL + 21 PLL) on a 3x3, and learning them can feel daunting and tedious. Cubingo gamifies the process with Duolingo-style progression: streaks, leveling, and XP for consistent practice.
 
@@ -102,37 +100,12 @@ _For more details, see the live app: https://cubingo.vercel.app_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] Add more guided practice plans.
-- [ ] Improve algorithm video coverage.
-- [ ] Add additional cube training modes.
-
-See the [open issues](https://github.com/krishvijay100/Cubingo/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
 * Inspiration from Duolingo-style streaks and leveling.
 * Timer UX inspired by CS Timer.
+* Embedded YouTube links are from the YouTuber SpeedCubeDB.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -146,7 +119,7 @@ If you have a suggestion that would make this better, please fork the repo and c
 [stars-url]: https://github.com/krishvijay100/Cubingo/stargazers
 [issues-shield]: https://img.shields.io/github/issues/krishvijay100/Cubingo.svg?style=for-the-badge
 [issues-url]: https://github.com/krishvijay100/Cubingo/issues
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: images/cubingohomepagedemo.png
 [HTML-shield]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
 [HTML-url]: https://developer.mozilla.org/en-US/docs/Web/HTML
 [CSS-shield]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
