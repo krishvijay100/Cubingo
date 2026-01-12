@@ -51,7 +51,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Cubingo homepage demo][product-screenshot]](https://cubingo.vercel.app)
+![Cubingo homepage demo](cubingo-homepagedemo.png)
 
 There are 78 last layer algorithms (57 OLL + 21 PLL) on a 3x3, and learning them can feel daunting and tedious. Cubingo gamifies the process with Duolingo-style progression: streaks, leveling, and XP for consistent practice.
 
@@ -119,7 +119,6 @@ _For more details, see the live app: https://cubingo.vercel.app_
 [stars-url]: https://github.com/krishvijay100/Cubingo/stargazers
 [issues-shield]: https://img.shields.io/github/issues/krishvijay100/Cubingo.svg?style=for-the-badge
 [issues-url]: https://github.com/krishvijay100/Cubingo/issues
-[product-screenshot]: images/cubingohomepagedemo.png
 [HTML-shield]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
 [HTML-url]: https://developer.mozilla.org/en-US/docs/Web/HTML
 [CSS-shield]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
