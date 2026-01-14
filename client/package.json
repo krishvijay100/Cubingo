@@ -1,0 +1,8 @@
+{
+  "name": "cubingo-client",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite"
+  }
+}
