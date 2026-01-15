@@ -7,13 +7,14 @@ export default function AuthPanel({ onAuthed }) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
+  const isLogin = mode === "login";
 
   async function handleSubmit(event) {
     event.preventDefault();
     setError("");
     setBusy(true);
     try {
-      if (mode === "login") {
+      if (isLogin) {
         await login(email, password);
       } else {
         await register(email, password);
@@ -26,11 +27,23 @@ export default function AuthPanel({ onAuthed }) {
     }
   }
 
+  function toggleMode() {
+    setMode(isLogin ? "register" : "login");
+  }
+
+  const headingText = isLogin ? "Log in" : "Create account";
+  const helperText = isLogin
+    ? "Access your saved progress."
+    : "Start saving your progress in the cloud.";
+  const switchText = isLogin ? "Need an account?" : "Already have an account?";
+  const switchButtonText = isLogin ? "Create one" : "Log in";
+  const submitText = busy ? "Please wait" : headingText;
+
   return (
     <section className="card" style={{ maxWidth: "420px", margin: "40px auto" }}>
-      <h2 style={{ marginBottom: "12px" }}>{mode === "login" ? "Log in" : "Create account"}</h2>
+      <h2 style={{ marginBottom: "12px" }}>{headingText}</h2>
       <p className="section-sub" style={{ marginBottom: "16px" }}>
-        {mode === "login" ? "Access your saved progress." : "Start saving your progress in the cloud."}
+        {helperText}
       </p>
       <form className="field" onSubmit={handleSubmit}>
         <label className="field">
@@ -54,18 +67,18 @@ export default function AuthPanel({ onAuthed }) {
         </label>
         {error ? <p style={{ color: "var(--danger)", fontSize: "13px" }}>{error}</p> : null}
         <button className="btn primary" type="submit" disabled={busy}>
-          {busy ? "Please wait" : mode === "login" ? "Log in" : "Create account"}
+          {submitText}
         </button>
       </form>
       <div style={{ marginTop: "12px", fontSize: "13px" }}>
-        {mode === "login" ? "Need an account? " : "Already have an account? "}
+        {switchText}{" "}
         <button
           type="button"
           className="btn ghost"
           style={{ padding: "4px 10px", marginLeft: "6px" }}
-          onClick={() => setMode(mode === "login" ? "register" : "login")}
+          onClick={toggleMode}
         >
-          {mode === "login" ? "Create one" : "Log in"}
+          {switchButtonText}
         </button>
       </div>
     </section>
