@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
+import path from "path";
+import { fileURLToPath } from "url";
 import { User } from "./models/User.js";
 import { Progress } from "./models/Progress.js";
 
@@ -135,6 +137,19 @@ app.put("/progress", authMiddleware, async (req, res) => {
 app.get("/health", (req, res) => {
   res.json({ ok: true });
 });
+
+const isProduction = process.env.NODE_ENV === "production";
+if (isProduction) {
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
+  const clientDistPath = path.resolve(__dirname, "..", "client", "dist");
+
+  app.use(express.static(clientDistPath));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(clientDistPath, "index.html"));
+  });
+}
 
 app.listen(port, () => {
   console.log(`Server listening on ${port}`);
