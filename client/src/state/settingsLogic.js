@@ -25,9 +25,4 @@ function resetAllProgress(state) {
   return fresh;
 }
 
-function overwriteState(currentState, importedJson) {
-  const normalized = normalizeState(importedJson);
-  return normalized;
-}
-
-export { resetAllStats, resetAllProgress, overwriteState };
+export { resetAllStats, resetAllProgress };
