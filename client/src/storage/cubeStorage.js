@@ -2,11 +2,15 @@ import { fetchMe, saveProgress } from "../api/progress.js";
 import { DEFAULT_STATE, mergeState, clone } from "./defaultState.js";
 
 async function loadState() {
-  const me = await fetchMe();
-  if (!me || !me.progress) {
+  try {
+    const me = await fetchMe();
+    if (!me || !me.progress) {
+      return clone(DEFAULT_STATE);
+    }
+    return mergeState(me.progress);
+  } catch (error) {
     return clone(DEFAULT_STATE);
   }
-  return mergeState(me.progress);
 }
 
 async function saveState(state) {
