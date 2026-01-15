@@ -11,24 +11,29 @@ import { fetchMe, logout } from "./api/auth.js";
 
 export default function App() {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
-  async function loadMe() {
+  async function loadCurrentUser() {
     try {
       const data = await fetchMe();
       setUser(data.user || null);
     } catch (error) {
       setUser(null);
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   }
 
   useEffect(() => {
-    loadMe();
+    loadCurrentUser();
   }, []);
 
-  if (loading) {
+  async function handleLogout() {
+    await logout();
+    setUser(null);
+  }
+
+  if (isLoading) {
     return (
       <div style={{ padding: "32px" }}>
         <p>Loading...</p>
@@ -38,8 +43,8 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <Layout user={user} onLogout={logout}>
-        {!user ? <AuthPanel onAuthed={loadMe} /> : null}
+      <Layout user={user} onLogout={handleLogout}>
+        {!user ? <AuthPanel onAuthed={loadCurrentUser} /> : null}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/learn" element={<LearnPage />} />
