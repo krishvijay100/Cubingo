@@ -107,7 +107,7 @@ The app runs at `http://localhost:5173` and proxies API requests to the Express 
 - Learn: browse OLL/PLL cases, view diagrams, and mark algorithms as learned.
 - Train: drill a selected case or use Recommended Practice to target weak spots.
 - Stats: track best, median, Ao5, and mastery tier per algorithm.
-- Settings: export/import progress JSON, change training settings, or reset stats.
+- Settings: change training settings or reset stats.
 
 _For more details, see the live app once deployed._
 
