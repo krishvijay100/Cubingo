@@ -52,12 +52,20 @@ function normalizeState(state) {
 async function loadCubeState() {
   const rawState = await CubeStorage.loadState();
   const normalized = normalizeState(rawState);
-  await CubeStorage.saveState(normalized);
+  try {
+    await CubeStorage.saveState(normalized);
+  } catch (error) {
+    // Guest mode: ignore save failures when not authenticated.
+  }
   return normalized;
 }
 
 async function saveCubeState(state) {
-  await CubeStorage.saveState(state);
+  try {
+    await CubeStorage.saveState(state);
+  } catch (error) {
+    // Guest mode: ignore save failures when not authenticated.
+  }
 }
 
 export { loadCubeState, saveCubeState, normalizeState, getLevelFromXp };
