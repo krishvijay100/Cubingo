@@ -53,7 +53,7 @@
 
 There are 78 last layer algorithms (57 OLL + 21 PLL) on a 3x3, and learning them can feel daunting and tedious. Cubingo gamifies the process with Duolingo-style progression: streaks, leveling, and XP for consistent practice.
 
-Cubingo adds unique training tools too. The recommended practice mode uses a weighting algorithm that considers recency, speed, and attempt count to suggest what you need most. Each case includes embedded YouTube videos for execution tips and finger tricks, plus a CS Timer-style drill timer for focused repetition. Progress is saved to a backend database with user accounts, and Settings includes export/import so you can back up or move your data between devices.
+Cubingo adds unique training tools too. The recommended practice mode uses a weighting algorithm that considers recency, speed, and attempt count to suggest what you need most. Each case includes embedded YouTube videos for execution tips and finger tricks, plus a CS Timer-style drill timer for focused repetition. Progress is saved to a backend database with user accounts.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -68,7 +68,7 @@ Cubingo adds unique training tools too. The recommended practice mode uses a wei
 <!-- GETTING STARTED -->
 ## Getting Started
 
-You can use the hosted app (update the URL once deployed) or run it locally with the MERN stack.
+You can use the hosted app at https://cubingo.onrender.com or run it locally with the MERN stack.
 
 ### Prerequisites
 
@@ -109,7 +109,7 @@ The app runs at `http://localhost:5173` and proxies API requests to the Express 
 - Stats: track best, median, Ao5, and mastery tier per algorithm.
 - Settings: change training settings or reset stats.
 
-_For more details, see the live app once deployed._
+_For more details, see the live app: https://cubingo.onrender.com_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
