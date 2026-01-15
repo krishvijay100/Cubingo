@@ -41,17 +41,21 @@ export default function App() {
     );
   }
 
+  const routesKey = user ? user.id : "guest";
+
   return (
     <BrowserRouter>
       <Layout user={user} onLogout={handleLogout}>
         {!user ? <AuthPanel onAuthed={loadCurrentUser} /> : null}
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/learn" element={<LearnPage />} />
-          <Route path="/train" element={<TrainPage />} />
-          <Route path="/stats" element={<StatsPage />} />
-          <Route path="/settings" element={<SettingsPage />} />
-        </Routes>
+        <div key={routesKey}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/learn" element={<LearnPage />} />
+            <Route path="/train" element={<TrainPage />} />
+            <Route path="/stats" element={<StatsPage />} />
+            <Route path="/settings" element={<SettingsPage />} />
+          </Routes>
+        </div>
       </Layout>
     </BrowserRouter>
   );
