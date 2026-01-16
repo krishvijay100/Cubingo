@@ -34,13 +34,6 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -62,42 +55,6 @@ Cubingo adds unique training tools too. The recommended practice mode uses a wei
 * [![React][React-shield]][React-url]
 * [![Express][Express-shield]][Express-url]
 * [![MongoDB][MongoDB-shield]][MongoDB-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-You can use the hosted app at https://cubingo.onrender.com or run it locally with the MERN stack.
-
-### Prerequisites
-
-- Node.js 18+ and npm
-- A MongoDB database (Atlas recommended)
-
-### Installation
-
-1. Clone the repo
-   ```sh
-   git clone https://github.com/krishvijay100/Cubingo.git
-   ```
-2. Install dependencies
-   ```sh
-   npm install
-   ```
-3. Create `server/.env`
-   ```sh
-   MONGODB_URI=your_mongodb_connection_string
-   JWT_SECRET=your_random_secret
-   PORT=3001
-   NODE_ENV=development
-   ```
-4. Start the dev servers (client + server)
-   ```sh
-   npm run dev
-   ```
-
-The app runs at `http://localhost:5173` and proxies API requests to the Express server on `http://localhost:3001`.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
